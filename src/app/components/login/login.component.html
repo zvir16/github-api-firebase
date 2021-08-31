@@ -1,0 +1,14 @@
+<form novalidate [formGroup]="loginUserForm" (ngSubmit)="loginUser()">
+  <mdb-form-control class="my-2">
+    <input mdbInput type="text" id="loginUser" class="form-control" formControlName="email" autocomplete="on">
+    <label mdbLabel for="loginUser" class="form-label">Email</label>
+  </mdb-form-control>
+    <mdb-form-control class="my-2">
+    <input mdbInput type="password" id="passwordUser" class="form-control" formControlName="password" autocomplete="on">
+    <label mdbLabel for="passwordUser" class="form-label">Password</label>
+  </mdb-form-control>
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-outline-success mx-2" (click)="loginInUserGithub()">Sign in via Github</button>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+</form>

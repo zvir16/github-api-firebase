@@ -1,0 +1,17 @@
+<h4>Block view</h4>
+<p *ngIf="githubService.githubData">Find {{githubService.githubData?.total_count}} users</p>
+<ng-container *ngIf="githubService.githubData; else loading">
+  <div class="card mb-2" *ngFor="let user of githubService.githubData?.items">
+    <h5 class="card-header">User name: {{user?.login}}</h5>
+    <div class="card-body">
+      <p class="card-text">ID: {{user.id}} node_id: {{user.node_id}}</p>
+      <a href="#" routerLink="/{{user.id}}"class="btn btn-primary me-2">Detailed page</a>
+      <a href="{{user.url}}" class="btn btn-outline-primary">User plain data</a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+    Enter search keywords...
+</ng-template>
+
