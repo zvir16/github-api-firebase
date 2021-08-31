@@ -1,0 +1,23 @@
+.modal-container {
+  font-size: 16px;
+  cursor: pointer;
+  .label-tab {
+    width: 45%;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  input {
+    visibility: hidden;
+  }
+}
+#signinControl:checked + label,
+#signupControl:checked + label {
+  border-bottom: 2px solid #1976d2;
+}
+
+#signupControl:checked ~ .login,
+#signinControl:checked ~ .signup {
+  display: none;
+}

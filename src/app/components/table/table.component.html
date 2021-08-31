@@ -1,0 +1,26 @@
+<h4>Table view</h4>
+<p *ngIf="githubService.githubData">Find {{githubService.githubData?.total_count}} users</p>
+<ng-container *ngIf="githubService.githubData; else loading">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Login</th>
+      <th scope="col">Detailed page</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of githubService.githubData?.items; let i = index">
+      <th scope="row" >{{ i + 1 }}</th>
+      <td>{{ user?.id}}</td>
+      <td> {{ user?.login}}</td>
+      <td><a routerLink="/{{user.id}}" class="btn btn-primary me-2">Detailed page</a></td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #loading>
+  Enter search keywords...
+</ng-template>

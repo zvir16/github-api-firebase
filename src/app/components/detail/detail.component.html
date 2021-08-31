@@ -1,0 +1,24 @@
+<div class="container mt-4 mb-4">
+  <div class="row mt-2 mb-2">
+    <div class="col-2">
+      <button class="btn btn-outline-success" type="button" goBackButton>To user list</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{account?.avatar_url}}" alt="User image card">
+        <div class="card-body">
+          <p class="card-text">Login: {{account?.login}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="user-data">
+        <p>User type: {{account?.type}} </p>
+        <p>User node: {{account?.node_id}} </p>
+        <p>Link: {{account?.url}} </p>
+      </div>
+    </div>
+  </div>
+</div>

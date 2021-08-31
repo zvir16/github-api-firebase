@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modalRef.close()"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="modal-title w-100" id="myModalLabel">
+    <div class="modal-container">
+      <input id="signinControl" type="radio" name="auth" checked>
+      <label for="signinControl" class="label-tab">
+        <span>Sign in</span>
+      </label>
+      <input id="signupControl" type="radio" name="auth">
+      <label for="signupControl" class="label-tab">
+        <span>Register</span>
+      </label>
+      <div class="auth-container login">
+        <app-login></app-login>
+      </div>
+      <div class="auth-container signup">
+        <app-signup></app-signup>
+      </div>
+    </div>
+  </div>
+</div>
