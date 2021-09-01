@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../../services/auth.service";
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MdbModalRef } from "mdb-angular-ui-kit/modal";
+import { AuthService } from "../../services/auth.service";
 import { ModalComponent } from "../modal/modal.component";
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-signup',
@@ -10,11 +10,11 @@ import { ModalComponent } from "../modal/modal.component";
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signUserForm: FormGroup= this.fb.group({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', Validators.required),
-  });
   message: string = '';
+  signUserForm: FormGroup= this.fb.group({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
 
   constructor(
     public fb: FormBuilder,
@@ -45,16 +45,7 @@ export class SignupComponent implements OnInit {
       });
   }
 
-  signInUserGithub(): void {
-    this.authService
-      .signInWithGithub()
-      .then(res => {
-        this.modalRef.close();
-      })
-      .catch(err => console.log(err));
-  }
-
-  setInputDynamicError(message: string) {
-    console.log(message)
+  setInputDynamicError(dynamicMessage: string) {
+    this.message = dynamicMessage;
   }
 }
