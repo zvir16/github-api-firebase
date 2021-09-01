@@ -8,6 +8,7 @@ import firebase from "firebase/compat/app";
 })
 export class AuthService {
   user$: Observable<any>;
+  isAuth$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
     private authService: AngularFireAuth
@@ -15,10 +16,21 @@ export class AuthService {
     this.user$ = this.authService.authState;
   }
 
+  getAuthState():Observable<boolean> {
+    return this.isAuth$.asObservable();
+  }
+
+  setAuth(status: boolean) {
+    this.isAuth$.next(status);
+  }
+
   signIn(email: string, password: string): Promise<firebase.User> {
     return new Promise<any>((resolve, reject ) => {
       this.authService.createUserWithEmailAndPassword(email, password)
-        .then(res => resolve(res))
+        .then(data => {
+          this.setAuth(true);
+          resolve(data);
+        })
         .catch(err => reject(err));
     });
   }
@@ -26,7 +38,10 @@ export class AuthService {
   login(email: string, password: string): Promise<firebase.User> {
     return new Promise<any>((resolve, reject ) => {
       this.authService.signInWithEmailAndPassword(email, password)
-        .then(data => resolve(data))
+        .then(data => {
+          this.setAuth(true);
+          resolve(data);
+        })
         .catch(error => reject(error));
     });
   }
@@ -35,12 +50,15 @@ export class AuthService {
     let provider = new firebase.auth.GithubAuthProvider();
     return new Promise<any>((resolve, reject ) => {
       this.authService.signInWithPopup(provider)
-        .then(data => resolve(data))
+        .then(data => {
+          this.setAuth(true);
+          resolve(data);
+        })
         .catch(error => reject(error));
     });
   }
 
   logout(): void {
-    this.authService.signOut().then(r => console.log(r));
+    this.authService.signOut().then(r => this.setAuth(false));
   }
 }

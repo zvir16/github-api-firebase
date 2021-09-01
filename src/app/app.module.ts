@@ -1,4 +1,3 @@
-import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from '@angular/core';
 import { environment } from "../environments/environment";
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +8,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { MdbDropdownModule } from "mdb-angular-ui-kit/dropdown";
 import { MdbValidationModule } from "mdb-angular-ui-kit/validation";
 import { ReactiveFormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
@@ -24,7 +24,7 @@ import { DetailComponent } from './components/detail/detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/blocks', pathMatch: 'full' },
-  { path: 'blocks', canActivate: [LoggedInGuard], component: BlocksComponent },
+  { path: 'blocks', canLoad: [LoggedInGuard], component: BlocksComponent },
   { path: 'table', canActivate: [LoggedInGuard], component: TableComponent},
   { path: ':id', canActivate: [LoggedInGuard], component: DetailComponent },
 ];

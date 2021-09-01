@@ -1,0 +1,55 @@
+[debug] [2021-09-01T18:11:18.771Z] ----------------------------------------------------------------------
+[debug] [2021-09-01T18:11:18.774Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rosty\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-09-01T18:11:18.774Z] CLI Version:   9.16.6
+[debug] [2021-09-01T18:11:18.774Z] Platform:      win32
+[debug] [2021-09-01T18:11:18.774Z] Node Version:  v12.16.1
+[debug] [2021-09-01T18:11:18.776Z] Time:          Wed Sep 01 2021 21:11:18 GMT+0300 (GMT+03:00)
+[debug] [2021-09-01T18:11:18.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-09-01T18:11:18.788Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-01T18:11:18.789Z] > authorizing via signed-in user (zvir16@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\angular\github-api-firebase
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-09-01T18:11:52.104Z] > refreshing access token with scopes: []
+[debug] [2021-09-01T18:11:52.104Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-09-01T18:11:52.721Z] <<< HTTP RESPONSE 200 {"date":"Wed, 01 Sep 2021 18:11:52 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-09-01T18:11:52.751Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-09-01T18:11:53.741Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-09-01T18:11:53.741Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project chatapp-395a2 (chatApp) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-09-01T18:12:33.873Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2021-09-01T18:12:34.406Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2021-09-01T18:12:34.406Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"9.0.1","browserURL":"https://www.gstatic.com/firebasejs/9.0.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/9.0.1/firebase.tgz"},"live":{"version":"9.0","browserURL":"https://www.gstatic.com/firebasejs/live/9.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/9.0/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/9.0.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/9.0.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/9.0.1/firebase-auth/cordova.js","auth/react-native":"https://www.gstatic.com/firebasejs/9.0.1/firebase-auth/react-native.js","functions":"https://www.gstatic.com/firebasejs/9.0.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore/lite.js","storage":"https://www.gstatic.com/firebasejs/9.0.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/9.0.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/9.0.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/9.0.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/9.0.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Detected a .git folder at D:\angular\github-api-firebase 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=369444202&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
